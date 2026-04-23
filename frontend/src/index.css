@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-gray-50 transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply text-gray-100 bg-[#0f172a];
+  }
+}
+
+@layer components {
+  /* Glassmorphism Classes */
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl rounded-2xl;
+  }
+  
+  .dark .glass-panel {
+    @apply bg-[#1e293b]/70 border-[#334155]/50 shadow-2xl;
+  }
+  
+  .glass-input {
+    @apply w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all placeholder-gray-400;
+  }
+  
+  .dark .glass-input {
+    @apply bg-[#0f172a]/50 border-[#334155] text-white placeholder-gray-500 focus:ring-primary-400;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-500 hover:to-indigo-500 text-white font-medium rounded-xl shadow-lg shadow-primary-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium rounded-xl shadow-sm transition-all;
+  }
+  
+  .dark .btn-secondary {
+    @apply bg-[#1e293b] border-[#334155] text-gray-200 hover:bg-[#334155];
+  }
+  
+  .animated-bg {
+    @apply bg-gradient-to-br from-indigo-50 via-white to-purple-50 animate-gradient-x;
+  }
+  
+  .dark .animated-bg {
+    @apply bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] animate-gradient-x;
+  }
+  
+  /* Neon Alert */
+  .neon-alert {
+    @apply bg-red-500/10 border border-red-500 text-red-600 dark:text-red-400 font-medium px-4 py-3 rounded-xl shadow-[0_0_15px_rgba(239,68,68,0.5)];
+  }
+}
